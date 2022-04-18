@@ -1,0 +1,29 @@
+{
+  "root": "libs/model-role",
+  "projectType": "library",
+  "sourceRoot": "libs/model-role",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/model-role",
+        "command": "go test ./... -cover -race"
+      }
+    },
+    "coverage": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/model-role",
+        "command": "go test ./... -coverprofile=coverage.out && go tool cover -html=\"coverage.out\""
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/model-role",
+        "command": "golangci-lint run"
+      }
+    }
+  },
+  "tags": []
+}
